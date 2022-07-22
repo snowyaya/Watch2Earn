@@ -11,4 +11,4 @@ User watches video ads while waiting fueling to earn money.
     - Direct rewarding is the most directly motivating method to maintain users. 
     
 `Sign in to Wayne app -> Watch the video without skipping -> Get refund in Dover's account -> Use it for this deal or keep it in the account`
-`
+
