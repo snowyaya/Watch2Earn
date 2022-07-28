@@ -2,11 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import ReactPlayer from 'react-player'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Link from 'next/link'
 
 
-export default function Home() {
+export default function Home(onEnded) {
   return (
     <div className={styles.container}>
       <Head>
@@ -18,27 +18,40 @@ export default function Home() {
         <h1 className={styles.title}>
           Watch2Earn
         </h1>
-        <p>
+
+        <p className='reward-balance'>
           You current reward balance: $$$
         </p>
         <p>
           Watch an ad and earn $$$
         </p>
-        <h2>NextJs VideoPlayer</h2>
-        <ReactPlayer url='https://www.youtube.com/watch?v=kEOzBqOjWGU'/>
+        <div className='ads-video'>
+          <ReactPlayer 
+          controls
+          url='https://www.youtube.com/watch?v=kEOzBqOjWGU'
+          // onEnded={hanldeVideoEnded}
+          />
+          {
 
-        <p>Rewarded: $$$</p>
+          }
+        </div>
+
+        <p className='rewarded_amount'>Rewarded: $$$</p>
         
-        <Link href="/checkout">
-          <a className='checkout-button'> Check Out </a>
-        </Link>
-
         <Link href="/">
           <a className='watch-more-button'> Watch More </a>
         </Link>
 
+        <p></p>
+
+        <Link href="/checkout">
+          <a className='checkout-button'> Check Out </a>
+        </Link>
+
         <style jsx>{`
-          .container {}
+          .container {
+            justify-content: center;
+          }
           .checkout-button{
             background-color: #4CAF50; /* Green */
             border: none;
@@ -48,15 +61,55 @@ export default function Home() {
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            position: absolute;
             right: 0px;
             width: 300px;
-            border: 3px solid #73AD21;
             padding: 10px;
           }
-        `}</style>
 
-        
+          .watch-more-button{
+            background-color: #0096FF; /* blue */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            right: 0px;
+            width: 300px;
+            boder-radius: 25px;
+            padding: 10px;
+          }
+
+          .checkout-button:hover {
+            background-color: #73A9AD; 
+          }
+
+          .watch-more-button:hover {
+            background-color: #187498;
+          }
+
+          .reward-balance{
+            color: #F9D923;
+          }
+
+        `}</style>
     </div>
   )
 }
+
+// export async function getServerSideProps(context) {
+//   return {
+//     props: {
+//       onEnded: context.query.onEnded
+//     }
+//   }
+// }
+
+// const onEnded = async () => {
+//   render (
+//     <div>
+//       <p className='rewarded_amount'>Rewarded: 💰💰💰 </p>
+//     </div>
+//   )
+// }
