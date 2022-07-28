@@ -24,15 +24,19 @@ export default function Home() {
         <p>
           Watch an ad and earn $$$
         </p>
-        <h2>NextJs VideoPlayer - GeeksforGeeks</h2>
+        <h2>NextJs VideoPlayer</h2>
         <ReactPlayer url='https://www.youtube.com/watch?v=kEOzBqOjWGU'/>
 
-        <p>Rewarded</p>
-        <p>$$$</p>
+        <p>Rewarded: $$$</p>
+        
         <Link href="/checkout">
           <a className='button'> Check Out </a>
         </Link>
-        <p>Watch More</p>
+
+        <Link href="/">
+          <a className='button1'> Watch More </a>
+        </Link>
+
         <style jsx>{`
           .container {}
           .button{
@@ -51,6 +55,8 @@ export default function Home() {
             padding: 10px;
           }
         `}</style>
+
+        
     </div>
   )
 }
