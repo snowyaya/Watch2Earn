@@ -33,6 +33,24 @@ export default function Home() {
           <a className='button'> Check Out </a>
         </Link>
         <p>Watch More</p>
+        <style jsx>{`
+          .container {}
+          .button{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            position: absolute;
+            right: 0px;
+            width: 300px;
+            border: 3px solid #73AD21;
+            padding: 10px;
+          }
+        `}</style>
     </div>
   )
 }
