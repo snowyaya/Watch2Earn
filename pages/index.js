@@ -30,16 +30,16 @@ export default function Home() {
         <p>Rewarded: $$$</p>
         
         <Link href="/checkout">
-          <a className='button'> Check Out </a>
+          <a className='checkout-button'> Check Out </a>
         </Link>
 
         <Link href="/">
-          <a className='button1'> Watch More </a>
+          <a className='watch-more-button'> Watch More </a>
         </Link>
 
         <style jsx>{`
           .container {}
-          .button{
+          .checkout-button{
             background-color: #4CAF50; /* Green */
             border: none;
             color: white;
