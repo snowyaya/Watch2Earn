@@ -12,6 +12,7 @@ export default function Home(onEnded) {
     // setIsShown(current => !current);
     setIsShown(true);
   }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -24,29 +25,45 @@ export default function Home(onEnded) {
           Watch2Earn
         </h1>
 
-        <p className='reward-balance'>
+        <p className={styles.p}>
           You current reward balance: $$$
         </p>
-        <p>
+        <p className={styles.p}>
           Watch an ad and earn $$$
         </p>
-        <div className='ads-video'>
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        }}>
           <ReactPlayer 
           controls
           url='https://www.youtube.com/watch?v=kEOzBqOjWGU'
           onEnded={hanldeVideoEnded}
           />
+        </div>
+
+          {
+            !isShown && (
+              <p className={styles.notRewardedAmount}>Rewarded: $$$</p>
+            )
+          }
+
           {
             isShown && (
-              <p>Rewarded: 💰💰💰</p>
+              <p className={styles.rewardedAmount}>Rewarded: 💰💰💰</p>
             )
           }
 
           {
             isShown && <Box />
           }
-        </div>
         
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        }}>
         <Link href="/">
           <a className='watch-more-button'> Watch More </a>
         </Link>
@@ -56,38 +73,38 @@ export default function Home(onEnded) {
         <Link href="/checkout">
           <a className='checkout-button'> Check Out </a>
         </Link>
-
+        </div>
         <style jsx>{`
           .container {
             justify-content: center;
-          }
-          .checkout-button{
-            background-color: #4CAF50; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            right: 0px;
-            width: 300px;
-            padding: 10px;
           }
 
           .watch-more-button{
             background-color: #0096FF; /* blue */
             border: none;
             color: white;
-            padding: 15px 32px;
+            padding: 10px 10px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 20px;
+            font-size: 32px;
             right: 0px;
-            width: 300px;
-            boder-radius: 25px;
-            padding: 10px;
+            width: 225px;
+            margin-righ : 100px;
+          }
+
+          .checkout-button{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 32px;
+            right: 0px;
+            width: 225px;
+            margin-left: 100px;
           }
 
           .checkout-button:hover {
@@ -108,7 +125,7 @@ export default function Home(onEnded) {
 }
 function Box() {
   return (
-    <div>
+    <div className="rewardBox">
     </div>
   )
 }
