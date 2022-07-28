@@ -28,9 +28,7 @@ export default function Home(onEnded) {
         <p className={styles.p}>
           Your current rewards balance is: $$$
         </p>
-        <p className={styles.p}>
-          Watch this video picked for you to earn points!
-        </p>
+
         <div style={{
             display: 'flex',
             alignItems: 'center',
