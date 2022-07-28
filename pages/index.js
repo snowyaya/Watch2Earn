@@ -26,10 +26,10 @@ export default function Home(onEnded) {
         </h1>
 
         <p className={styles.p}>
-          You current reward balance: $$$
+          Your current rewards balance is: $$$
         </p>
         <p className={styles.p}>
-          Watch an ad and earn $$$
+          Watch this video picked for you to earn points!
         </p>
         <div style={{
             display: 'flex',
