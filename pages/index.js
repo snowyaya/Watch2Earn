@@ -35,7 +35,6 @@ export default function Home(onEnded) {
             justifyContent: 'center',
         }}>
           <ReactPlayer 
-          controls
           url='https://www.youtube.com/watch?v=kEOzBqOjWGU'
           onEnded={hanldeVideoEnded}
           />
