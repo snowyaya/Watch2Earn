@@ -32,6 +32,7 @@ export default function Home() {
         <Link href="/checkout">
           <a className='button'> Check Out </a>
         </Link>
+        <p>Watch More</p>
     </div>
   )
 }
