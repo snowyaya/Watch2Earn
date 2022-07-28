@@ -7,6 +7,11 @@ import Link from 'next/link'
 
 
 export default function Home(onEnded) {
+  const [isShown, setIsShown] = useState(false);
+  const hanldeVideoEnded = event => {
+    // setIsShown(current => !current);
+    setIsShown(true);
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -29,14 +34,18 @@ export default function Home(onEnded) {
           <ReactPlayer 
           controls
           url='https://www.youtube.com/watch?v=kEOzBqOjWGU'
-          // onEnded={hanldeVideoEnded}
+          onEnded={hanldeVideoEnded}
           />
           {
+            isShown && (
+              <p>Rewarded: 💰💰💰</p>
+            )
+          }
 
+          {
+            isShown && <Box />
           }
         </div>
-
-        <p className='rewarded_amount'>Rewarded: $$$</p>
         
         <Link href="/">
           <a className='watch-more-button'> Watch More </a>
@@ -97,19 +106,9 @@ export default function Home(onEnded) {
     </div>
   )
 }
-
-// export async function getServerSideProps(context) {
-//   return {
-//     props: {
-//       onEnded: context.query.onEnded
-//     }
-//   }
-// }
-
-// const onEnded = async () => {
-//   render (
-//     <div>
-//       <p className='rewarded_amount'>Rewarded: 💰💰💰 </p>
-//     </div>
-//   )
-// }
+function Box() {
+  return (
+    <div>
+    </div>
+  )
+}
