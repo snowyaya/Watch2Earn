@@ -29,4 +29,3 @@ Sign in to Wayne app -> Watch the video without skipping -> Get refund in Dover'
 ## Future
 
 - Use searching algorithm to find the appropriate ads (time length, topic) for the custormers
-- 
