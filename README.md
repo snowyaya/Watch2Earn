@@ -1,6 +1,6 @@
 # Watch to Earn at Wayne Dover
 
-## Use Story
+## User Story
 
 User watches video ads while waiting fueling to earn money.
 
